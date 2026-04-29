@@ -1,0 +1,218 @@
+.landing-video-shell {
+  background-color: #000;
+}
+
+.landing-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  display: block;
+}
+
+.landing-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.landing-create-account-btn {
+  will-change: transform, box-shadow;
+}
+
+.landing-create-account-btn:hover {
+  animation: landingCtaFloat 1.2s ease-in-out infinite;
+}
+
+.landing-create-account-btn:focus-visible {
+  animation: landingCtaFloat 1.2s ease-in-out infinite;
+}
+
+@keyframes adminPortalFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.admin-portal-float {
+  will-change: transform;
+  animation: adminPortalFloat 3s ease-in-out infinite;
+}
+
+@keyframes landingCtaFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 10px 24px rgba(255, 179, 71, 0.25);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(255, 179, 71, 0.36);
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-hero-video {
+    object-position: center center;
+  }
+
+  .landing-hero-overlay {
+    background: rgba(0, 0, 0, 0.52);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-create-account-btn {
+    animation: none;
+  }
+
+  .admin-portal-float {
+    animation: none;
+  }
+}
+
+.type-a-feature-media {
+  max-width: 620px;
+  aspect-ratio: 16 / 10;
+}
+
+@media (min-width: 1280px) {
+  .type-a-feature-grid {
+    grid-template-columns: 220px auto minmax(0, 620px) auto;
+    min-height: 360px;
+    height: auto;
+  }
+
+  .type-a-feature-copy {
+    min-height: 360px;
+    height: auto;
+  }
+
+  .type-a-feature-media {
+    min-height: 320px;
+    height: 100%;
+    max-height: none;
+  }
+
+  .type-a-feature-labels {
+    min-height: 320px;
+    height: 100%;
+    max-height: none;
+    align-items: stretch;
+  }
+
+  .type-a-feature-label-btn {
+    height: 100%;
+    max-height: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .floating-navbar-shell {
+    width: calc(100vw - var(--site-gutter-double));
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-navbar {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-navbar-shell {
+    top: 0.6rem;
+    width: calc(100vw - var(--site-gutter-double));
+  }
+}
+
+/* Responsive hardening (layout-preserving) */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.floating-navbar-shell {
+  width: calc(100% - var(--site-gutter-double));
+}
+
+.landing-footer-content {
+  width: calc(100% - var(--site-gutter-double));
+}
+
+.floating-mobile-panel {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.type-a-feature-grid,
+.type-a-feature-copy,
+.type-a-feature-media {
+  min-width: 0;
+}
+
+/* Mobile: 320px-480px */
+@media (max-width: 480px) {
+  :root {
+    --site-gutter: 5%;
+    --site-gutter-double: 10%;
+  }
+
+  .floating-navbar-shell {
+    top: 0.55rem;
+  }
+
+  .floating-navbar-inner {
+    height: 60px;
+    padding: 0 0.6rem;
+  }
+
+  .floating-mobile-panel {
+    max-height: calc(100dvh - 5rem);
+  }
+
+  .type-a-feature-media {
+    min-height: 220px;
+  }
+}
+
+/* Tablet: 481px-768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --site-gutter: 4.5%;
+    --site-gutter-double: 9%;
+  }
+
+  .floating-mobile-panel {
+    max-height: calc(100dvh - 5.5rem);
+  }
+}
+
+/* Small Laptop: 769px-1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --site-gutter: 4%;
+    --site-gutter-double: 8%;
+  }
+}
+
+/* Desktop: 1025px+ */
+@media (min-width: 1025px) {
+  :root {
+    --site-gutter: 4%;
+    --site-gutter-double: 8%;
+  }
+}
